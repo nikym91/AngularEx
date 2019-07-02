@@ -1,0 +1,32 @@
+<h4>Select Department Id</h4>
+<select class="custom-select" type="number" [(ngModel)]="selectValue" (ngModelChange)="toSelect()">
+  <option *ngFor="let department of allDepartments" [ngValue]="department.departmentId">{{department.departmentId}}</option>
+</select>
+
+<h4>Select Employees older than</h4>
+<input (keyup)="onKey($event)">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">employeeId</th>
+      <th scope="col">departmentId</th>
+      <th scope="col">firstName</th>
+      <th scope="col">lastName</th>
+      <th scope="col">dateOfBirth</th>
+      <th scope="col">email</th>
+      <th scope="col">address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.employeeId}}</td>
+      <td>{{employee.departmentId}}</td>
+      <td>{{employee.firstName }}</td>
+      <td>{{employee.lastName}}</td>
+      <td>{{employee.dateOfBirth | date: 'longDate'}}</td>
+      <td>{{employee.email}}</td>
+      <td>{{employee.address}}</td>
+    </tr>
+  </tbody>
+</table>

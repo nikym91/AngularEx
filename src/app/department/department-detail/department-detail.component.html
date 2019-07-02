@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Foundation Date</th>
+      <th scope="col">Manager</th>
+      <th scope="col">Budget</th>
+      <th scope="col">Is Technologic?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{department.departmentId}}</td>
+      <td>{{department.name}}</td>
+      <td>{{department.foundationDate | date: 'longDate'}}</td>
+      <td>{{department.manager}}</td>
+      <td>{{department.budget}}</td>
+      <td><input type="checkbox" [checked]="department.isTechnologic" onclick="return false"></td>
+    </tr>
+  </tbody>
+</table>

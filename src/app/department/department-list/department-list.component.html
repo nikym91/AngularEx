@@ -1,0 +1,21 @@
+<h4>Select Employees older than</h4>
+<input (keyup)="onKey($event)">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Foundation Date</th>
+      <th scope="col">Manager</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let department of departments">
+      <td>{{department.name}}</td>
+      <td>{{department.foundationDate | date: 'longDate'}}</td>
+      <td>{{department.manager}}</td>
+      <td><button type="button" class="btn btn-info" [routerLink]="['/department-detail/', department.departmentId]">Detail</button></td>
+    </tr>
+  </tbody>
+</table>
